@@ -1,7 +1,9 @@
 $app-mobile-width: 420px;
 $app-primary-btn-bg-color: #58C19C;
-$app-primary-btn-color: #fff;
+$app-danger-btn-bg-color: #ea5455;
+$app-btn-color: #fff;
 $app-primary-select-color: #58C19C;
+
 @font-face {
   font-family: 'Oxygen';
   font-weight: 300;
@@ -36,11 +38,12 @@ $app-primary-select-color: #58C19C;
 }
 
 .button {
+  padding: 14px 24px;
   font-size: 16px;
   font-weight: 700;
-  width: 343px;
+  max-width: 343px;
   height: 48px;
-  color: $app-primary-btn-color;
+  color: $app-btn-color;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -48,6 +51,29 @@ $app-primary-select-color: #58C19C;
   &.primary {
     background-color: $app-primary-btn-bg-color;
   }
+
+  &.danger {
+    background-color: $app-danger-btn-bg-color;
+  }
+}
+
+textarea {
+  color: #808080;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  padding: 15px;
+  resize: none !important;
+  border: 1px solid #eeeff1;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+.subheader {
+  margin: 20px 0;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: #808080;
+  text-align: center;
 }
 
 .popup-header {
@@ -59,35 +85,40 @@ $app-primary-select-color: #58C19C;
   line-height: 100%;
 }
 
-.popup-content,
 .popup-footer {
   display: flex;
   justify-content: center;
   padding: 20px 0;
+
+  .button {
+    width: 100%;
+  }
 }
 
-.select-plan-container {
+.evaluate-plan-container {
   margin-bottom: 20px;
 
   .item {
     display: flex;
-    width: 343px;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+
     padding: 15px;
     border: 1px solid #eeeff1;
     box-sizing: border-box;
     border-radius: 6px;
+    margin-bottom: 10px;
 
     &:hover {
       cursor: pointer;
     }
-
     &.selected {
       border: 2px solid #58c19c;
     }
 
     .icon {
       margin-right: 15px;
-      padding-top: 8px;
 
       img {
         //
@@ -105,37 +136,212 @@ $app-primary-select-color: #58C19C;
         opacity: 0.6;
       }
     }
+
+    .input-container {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+
+      //input {
+      //  opacity: 0;
+      //  cursor: pointer;
+      //  height: 0;
+      //  width: 0;
+      //}
+      //.checkmark {
+      //  position: absolute;
+      //  top: 0;
+      //  left: 0;
+      //  height: 25px;
+      //  width: 25px;
+      //  background-color: #eee;
+      //}
+    }
   }
 }
 
-.subheader {
-  color: #808080;
-  letter-spacing: 0.04em;
-  text-align: center;
+.how-do-you-feel-container {
+  .select-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    .item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 10px 15px;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      color: #9F9F9F;
+      background-color: #F8F8F8;
+      border-radius: 27px;
+      cursor: pointer;
+
+      .icon {
+        margin-right: 5px;
+      }
+
+      .name {
+        font-size: 14px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .select-tags-input-group-container {
+    label {
+      display: block;
+      color: #202020;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    textarea {
+      display: block;
+      width: 100%;
+    }
+  }
 }
 
-.select-tags-container {
-  display: flex;
-  width: 420px;
+.current-weight-container {
+  .current-weight-input-group-container {
+      input {
+        border: none;
+        width: 100%;
+        text-align: center;
 
-  .item {
-    cursor: pointer;
+        font-family: Teko, serif;
+        font-weight: 400;
+        font-size: 144px;
+        line-height: 206px;
+        caret-color: #ea5455;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
+    .current-weight-input-container {
+
+      .weight-meter {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        font-family: Teko, serif;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 26px;
+        color: #808080;
+      }
+    }
+  }
+}
+
+.consult-with-coach-container {
+  margin-top: 35px;
+
+  .coach-container {
     display: flex;
-    padding: 10px 15px;
-    margin-right: 8px;
-    color: #9F9F9F;
-    background-color: #F8F8F8;
-    border-radius: 27px;
+    align-items: center;
+    flex-direction: column;
+    background: #f8f8f8;
+    border-radius: 6px;
+    padding: 35px 0 10px;
+    margin-bottom: 20px;
 
-    .icon {
-      margin-right: 5px;
-      padding-top: 3px;
+    .avatar {
+      position: absolute;
+      top: -35px;
+    }
+
+    .title {
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #ea5455;
+      font-size: 10px;
+      line-height: 20px;
+      letter-spacing: 0.06em;
     }
 
     .name {
+      font-weight: 700;
       font-size: 14px;
-      font-weight: bold;
+      line-height: 20px;
     }
+
+    .rank {
+      font-size: 12px;
+      line-height: 20px;
+      font-weight: 400;
+      color: #808080;
+    }
+
+    .conclusion-container {
+      margin-top: 10px;
+      width: 70%;
+
+      .get-conclusion-button {
+        width: 100%;
+      }
+
+      .price-description {
+        margin-top: 5px;
+        color: #808080;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 12px;
+        letter-spacing: 0.04em;
+      }
+    }
+  }
+
+  .coach-question-container {
+    textarea {
+      width: 100%;
+      color: #808080;
+
+      &.disabled {
+        &::placeholder {
+          color: #9F9F9F;
+        }
+
+        background-color: #f8f8f8;
+      }
+    }
+  }
+}
+
+.complete-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-content: center;
+
+  .title {
+    font-family: Teko, serif;
+    font-weight: 500;
+    color: #58c19c;
+    font-size: 40px;
+    letter-spacing: 0.04em;
+  }
+  .icon {
+    margin: 10px 0 20px;
+  }
+  .description {
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    color: #808080;
+    font-weight: 400;
   }
 }
 
