@@ -39,11 +39,21 @@ $app-primary-select-color: #58C19C;
   }
 }
 
+html, body {
+  height: 100%;
+}
+
+.main-page-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .button {
   padding: 14px 24px;
   font-size: 16px;
   font-weight: 700;
-  max-width: 343px;
   height: 48px;
   color: $app-btn-color;
   border: none;
@@ -90,6 +100,11 @@ textarea {
   color: #202020;
   font-size: 40px;
   line-height: 100%;
+  padding: 30px 0;
+
+  @media screen and (max-width: $app-mobile-width) {
+    padding: 15px;
+  }
 }
 
 .popup-footer {
@@ -135,6 +150,7 @@ textarea {
 
     .info {
       .name {
+        display: flex;
         font-weight: 700;
       }
       .description {
@@ -232,6 +248,7 @@ textarea {
       font-weight: bold;
       font-size: 14px;
       line-height: 20px;
+      text-align: left;
     }
 
     textarea {
@@ -262,6 +279,7 @@ textarea {
         }
       }
     .current-weight-input-container {
+      position: relative;
       padding: 0;
 
       .weight-meter {
@@ -279,15 +297,13 @@ textarea {
 }
 
 .consult-with-coach-container {
-  margin-top: 35px;
-
   .coach-container {
     display: flex;
     align-items: center;
     flex-direction: column;
     background: #f8f8f8;
     border-radius: 6px;
-    padding: 35px 0 10px;
+    padding: 45px 0 10px;
     margin-bottom: 20px;
 
     .avatar {
@@ -374,20 +390,15 @@ textarea {
     letter-spacing: 0.04em;
     color: #808080;
     font-weight: 400;
+    margin-bottom: 80px;
   }
-}
-
-.main-page-container {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .popup-container {
   text-align: center;
 
   .body {
+    padding: 0;
   }
 
   .popup-inner-container {
@@ -400,10 +411,18 @@ textarea {
   }
 
   .popup-content {
+    border-radius: 20px;
+
     @media screen and (max-width: $app-mobile-width) {
       height: auto;
       min-height: 100%;
       border-radius: 0;
+    }
+
+    .close {
+      position: absolute;
+      top: 25px;
+      right: 25px;
     }
   }
 
@@ -414,7 +433,23 @@ textarea {
 
 #stepper {
   .stepper-header {
-    display: none !important;
+    display: block;
+
+    .step {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+
+      .step-trigger {
+        display: none;
+      }
+    }
+  }
+
+  .stepper-content {
+    padding: 80px 0 35px;
   }
 }
 
