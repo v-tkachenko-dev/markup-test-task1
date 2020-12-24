@@ -17,9 +17,9 @@ services:
             - '.:/var/www/html'
         networks:
             - sail
-        depends_on:
+#        depends_on:
 #            - mysql
-            - redis
+#            - redis
             # - selenium
     # selenium:
     #     image: 'selenium/standalone-chrome'

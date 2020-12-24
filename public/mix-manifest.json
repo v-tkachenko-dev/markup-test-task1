@@ -1,4 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/js/bs-stepper.min.js": "/js/bs-stepper.min.js",
+    "/css/bs-stepper.min.css": "/css/bs-stepper.min.css"
 }

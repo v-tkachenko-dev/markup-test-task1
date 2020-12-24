@@ -1,6 +1,8 @@
 $app-mobile-width: 420px;
 $app-primary-btn-bg-color: #58C19C;
 $app-danger-btn-bg-color: #ea5455;
+$app-disabled-btn-bg-color: #eeeff1;
+$app-disabled-btn-color: #bfbfbf;
 $app-btn-color: #fff;
 $app-primary-select-color: #58C19C;
 
@@ -54,6 +56,11 @@ $app-primary-select-color: #58C19C;
 
   &.danger {
     background-color: $app-danger-btn-bg-color;
+  }
+
+  &.disabled {
+    background-color: $app-disabled-btn-bg-color;
+    color: $app-disabled-btn-color;
   }
 }
 
@@ -115,6 +122,7 @@ textarea {
     }
     &.selected {
       border: 2px solid #58c19c;
+      padding: 13px;
     }
 
     .icon {
@@ -139,27 +147,32 @@ textarea {
 
     .input-container {
       position: absolute;
-      right: 10px;
-      top: 50%;
+      right: 15px;
+      top: 35%;
       -webkit-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none;
 
-      //input {
-      //  opacity: 0;
-      //  cursor: pointer;
-      //  height: 0;
-      //  width: 0;
-      //}
-      //.checkmark {
-      //  position: absolute;
-      //  top: 0;
-      //  left: 0;
-      //  height: 25px;
-      //  width: 25px;
-      //  background-color: #eee;
-      //}
+      input {
+        display: none;
+
+        &:checked {
+          & + .checkmark {
+            content: url("/images/complete-small-icon.png");
+            border: none;
+          }
+        }
+      }
+
+      .checkmark {
+        display: block;
+        border: 2px solid #BFBFBF;
+        box-sizing: border-box;
+        border-radius: 100%;
+        width: 20px;
+        height: 20px;
+      }
     }
   }
 }
@@ -173,22 +186,39 @@ textarea {
     margin-bottom: 20px;
 
     .item {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      padding: 10px 15px;
       margin-right: 8px;
       margin-bottom: 8px;
       color: #9F9F9F;
       background-color: #F8F8F8;
       border-radius: 27px;
-      cursor: pointer;
+
+      input {
+        display: none;
+
+        &:checked {
+          & + label {
+            border: 2px solid #58C19C;
+            padding: 6px 13px 8px;
+          }
+        }
+      }
+
+      label {
+        padding: 8px 15px 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 0;
+        cursor: pointer;
+        border-radius: 27px;
+      }
 
       .icon {
         margin-right: 5px;
       }
 
       .name {
+        padding-top: 2px;
         font-size: 14px;
         font-weight: bold;
       }
@@ -214,8 +244,9 @@ textarea {
 .current-weight-container {
   .current-weight-input-group-container {
       input {
-        border: none;
         width: 100%;
+        padding: 0;
+        border: none;
         text-align: center;
 
         font-family: Teko, serif;
@@ -231,6 +262,7 @@ textarea {
         }
       }
     .current-weight-input-container {
+      padding: 0;
 
       .weight-meter {
         position: absolute;
@@ -377,5 +409,31 @@ textarea {
 
   .footer {
     justify-content: center;
+  }
+}
+
+#stepper {
+  .stepper-header {
+    display: none !important;
+  }
+}
+
+.progress-container {
+  position: relative;
+
+  .progress {
+    height: 4px;
+    background-color: #eeeff1;
+
+    .progress-bar {
+      background-color: #ea5455;
+      height: 4px;
+    }
+  }
+
+  .runner-icon {
+    left: 0;
+    top: 30px;
+    position: absolute;
   }
 }

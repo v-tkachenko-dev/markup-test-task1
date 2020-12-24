@@ -17,42 +17,49 @@
                         @include('components.weekly_plan_benchmark_popup.feel_tags_select.item', [
                             'src' => 'images/emotions/joyful-small-grey.png',
                             'name' => 'Joyful',
-                            'selected' => false
+                            'value' => 'joyful',
+                            'selected' => false,
                         ])
 
                         @include('components.weekly_plan_benchmark_popup.feel_tags_select.item', [
                             'src' => 'images/emotions/powerful-small-grey.png',
                             'name' => 'Powerful',
+                            'value' => 'powerful',
                             'selected' => false
                         ])
 
                         @include('components.weekly_plan_benchmark_popup.feel_tags_select.item', [
                             'src' => 'images/emotions/peaceful-small-grey.png',
                             'name' => 'Peaceful',
+                            'value' => 'peaceful',
                             'selected' => false
                         ])
 
                         @include('components.weekly_plan_benchmark_popup.feel_tags_select.item', [
                             'src' => 'images/emotions/relaxed-small-grey.png',
                             'name' => 'Relaxed',
+                            'value' => 'relaxed',
                             'selected' => false
                         ])
 
                         @include('components.weekly_plan_benchmark_popup.feel_tags_select.item', [
                             'src' => 'images/emotions/miserable-small-grey.png',
                             'name' => 'Miserable',
+                            'value' => 'miserable',
                             'selected' => false
                         ])
 
                         @include('components.weekly_plan_benchmark_popup.feel_tags_select.item', [
                             'src' => 'images/emotions/hateful-small-grey.png',
                             'name' => 'Hateful',
+                            'value' => 'hateful',
                             'selected' => false
                         ])
 
                         @include('components.weekly_plan_benchmark_popup.feel_tags_select.item', [
                             'src' => 'images/emotions/anxious-small-grey.png',
                             'name' => 'Anxious',
+                            'value' => 'anxious',
                             'selected' => false
                         ])
                  </div>
@@ -73,5 +80,5 @@
 </div>
 
 <div class="popup-footer">
-    <button type="button" class="button primary">Continue</button>
+    @include('components.weekly_plan_benchmark_popup.continue_button')
 </div>

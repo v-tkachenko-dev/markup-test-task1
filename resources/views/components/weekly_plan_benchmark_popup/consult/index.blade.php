@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="coach-question-container">
-                    <textarea class="disabled" name="coach-question" rows="4" placeholder="Write a question to a coach about any pain that you might have or technique?"></textarea>
+                    <textarea class="" name="coach-question" rows="4" placeholder="Write a question to a coach about any pain that you might have or technique?"></textarea>
                 </div>
             </div>
         </div>
@@ -36,5 +36,5 @@
 </div>
 
 <div class="popup-footer">
-    <button type="button" class="button primary">Submit</button>
+    <button type="button" class="button primary" onclick="nextStep()">Submit</button>
 </div>

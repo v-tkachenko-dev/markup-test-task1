@@ -10,10 +10,8 @@
             {{ $description }}
         </div>
     </div>
-    <div class="input-container">
-        <label for="evaluate_option">
-            <input id="evaluate_option" name="evaluate_option" type="radio" value="0">
-{{--            <span class="checkmark"></span>--}}
-        </label>
-    </div>
+    <label for="evaluate_option_{{ $value }}" class="input-container">
+        <input id="evaluate_option_{{ $value }}" class="form-input" name="evaluate_option" type="radio" value="{{ $value }}">
+        <span class="checkmark"></span>
+    </label>
 </div>
