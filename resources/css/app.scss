@@ -201,6 +201,10 @@ textarea {
     justify-content: center;
     margin-bottom: 20px;
 
+    @media screen and (max-width: $app-mobile-width) {
+      justify-content: flex-start;
+    }
+
     .item {
       margin-right: 8px;
       margin-bottom: 8px;
@@ -225,8 +229,8 @@ textarea {
         flex-direction: row;
         align-items: center;
         margin-bottom: 0;
-        cursor: pointer;
         border-radius: 27px;
+        cursor: pointer;
       }
 
       .icon {
@@ -260,37 +264,46 @@ textarea {
 
 .current-weight-container {
   .current-weight-input-group-container {
-      input {
-        width: 100%;
-        padding: 0;
-        border: none;
-        text-align: center;
-
-        font-family: Teko, serif;
-        font-weight: 400;
-        font-size: 144px;
-        line-height: 206px;
-        caret-color: #ea5455;
-
-        &::-webkit-outer-spin-button,
-        &::-webkit-inner-spin-button {
-          -webkit-appearance: none;
-          margin: 0;
-        }
-      }
     .current-weight-input-container {
-      position: relative;
       padding: 0;
+      position: relative;
+      display: flex;
+      justify-content: center;
 
-      .weight-meter {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        font-family: Teko, serif;
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 26px;
-        color: #808080;
+      .current-weight-input-inner-container {
+        width: 118px;
+        position: relative;
+
+        input {
+          display: block;
+          width: 100%;
+          padding: 0;
+          border: none;
+          text-align: center;
+
+          font-family: Teko, serif;
+          font-weight: 400;
+          font-size: 96px;
+          line-height: 138px;
+          caret-color: #ea5455;
+
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+        }
+
+        .weight-meter {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          font-family: Teko, serif;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 26px;
+          color: #808080;
+        }
       }
     }
   }
@@ -375,6 +388,10 @@ textarea {
   flex-direction: column;
   align-content: center;
 
+  @media screen and (max-width: $app-mobile-width) {
+    padding: 25% 0;
+  }
+
   .title {
     font-family: Teko, serif;
     font-weight: 500;
@@ -423,6 +440,13 @@ textarea {
       position: absolute;
       top: 25px;
       right: 25px;
+
+      @media screen and (max-width: $app-mobile-width) {
+        margin-bottom: 20%;
+        top: 2%;
+        left: 5%;
+      }
+
     }
   }
 
@@ -434,6 +458,14 @@ textarea {
 #stepper {
   .stepper-header {
     display: block;
+
+    @media screen and (max-width: $app-mobile-width) {
+      .stepper-header-inner-container {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+    }
+
 
     .step {
       display: none;
@@ -456,6 +488,10 @@ textarea {
 .progress-container {
   position: relative;
 
+  @media screen and (max-width: $app-mobile-width) {
+    margin-bottom: 20%;
+  }
+
   .progress {
     height: 4px;
     background-color: #eeeff1;
@@ -470,5 +506,9 @@ textarea {
     left: 0;
     top: 30px;
     position: absolute;
+
+    @media screen and (max-width: $app-mobile-width) {
+      top: 20px;
+    }
   }
 }

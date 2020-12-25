@@ -6,8 +6,10 @@
 
         <div class="current-weight-input-group-container">
             <div class="current-weight-input-container">
-                <input type="number" name="current_weight" class="form-input current-weight-input" placeholder="0" value="" maxLength="3" autofocus>
-                <span class="weight-meter">KG</span>
+                <div class="current-weight-input-inner-container">
+                    <input type="number" name="current_weight" class="form-input current-weight-input" placeholder="0" value="" maxLength="3" autofocus>
+                    <span class="weight-meter">KG</span>
+                </div>
             </div>
         </div>
     </div>

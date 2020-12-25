@@ -7,48 +7,49 @@
                 </button>
                 <div id="stepper" class="bs-stepper">
                     <div class="stepper-header bs-stepper-header">
-                        <div class="step" data-target="#evaluate-step" data-progress-value="20">
-                            <div class="popup-header">
-                                Evaluate the Difficulty of Your Plan
+                        <div class="stepper-header-inner-container">
+                            <div class="step" data-target="#evaluate-step" data-progress-value="20">
+                                <div class="popup-header">
+                                    Evaluate the Difficulty of Your Plan
+                                </div>
+                                <button type="button" class="btn step-trigger"></button>
                             </div>
-                            <button type="button" class="btn step-trigger"></button>
-                        </div>
 
-                        <div class="step" data-target="#feel-tags-select-step" data-progress-value="40">
-                            <div class="popup-header">
-                                How do you feel?
+                            <div class="step" data-target="#feel-tags-select-step" data-progress-value="40">
+                                <div class="popup-header">
+                                    How do you feel?
+                                </div>
+                                <button type="button" class="btn step-trigger"></button>
                             </div>
-                            <button type="button" class="btn step-trigger"></button>
-                        </div>
 
-                        <div class="step" data-target="#current-weight-step" data-progress-value="60">
-                            <div class="popup-header">
-                                Your current weight?
+                            <div class="step" data-target="#current-weight-step" data-progress-value="60">
+                                <div class="popup-header">
+                                    Your current weight?
+                                </div>
+                                <button type="button" class="btn step-trigger"></button>
                             </div>
-                            <button type="button" class="btn step-trigger"></button>
-                        </div>
 
-                        <div class="step" data-target="#consult-step" data-progress-value="80">
-                            <div class="popup-header">
-                                Consult with coach?
+                            <div class="step" data-target="#consult-step" data-progress-value="80">
+                                <div class="popup-header">
+                                    Consult with coach?
+                                </div>
+                                <button type="button" class="btn step-trigger"></button>
                             </div>
-                            <button type="button" class="btn step-trigger"></button>
-                        </div>
 
-                        <div class="step" data-target="#complete-step" data-progress-value="100">
-                            <button type="button" class="btn step-trigger"></button>
-                        </div>
+                            <div class="step" data-target="#complete-step" data-progress-value="100">
+                                <button type="button" class="btn step-trigger"></button>
+                            </div>
 
-                        <div class="progress-container">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-container">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                                <div class="runner-icon">
+                                    <img src="images/runner.png" alt="">
                                 </div>
                             </div>
-                            <div class="runner-icon">
-                                <img src="images/runner.png" alt="">
-                            </div>
                         </div>
-
                     </div>
                     <div class="stepper-content bs-stepper-content">
                         <div class="container">

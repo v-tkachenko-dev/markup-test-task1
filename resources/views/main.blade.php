@@ -74,10 +74,27 @@
 
         function nextStep() {
             if (validateActiveStep()) {
-                stepper.next();
+                stepperNextStep();
                 updateActiveProgressValue();
                 validateActiveStep();
             }
+        }
+
+        function stepperNextStep() {
+            const evaluateOption = $('#evaluate_plan_form input[name=evaluate_option]:checked').val();
+            const currentStep = getCurrentStep();
+
+            // good plan evaluation flow
+            if (currentStep === 'current-weight-step' && ['doable', 'too_easy'].includes(evaluateOption)) {
+                stepper.to(5);
+                return;
+            }
+
+            stepper.next();
+        }
+
+        function getCurrentStep() {
+            return $('#stepper .content.active').attr('id');
         }
 
         function updateActiveProgressValue() {
@@ -89,7 +106,7 @@
         }
 
         function hideProgressIfLastStep() {
-            const stepId = $('#stepper .content.active').attr('id');
+            const stepId = getCurrentStep();
             if (stepId === 'complete-step') {
                 $('#stepper .progress-container').hide();
             }
